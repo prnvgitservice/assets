@@ -2292,6 +2292,7 @@
         $("#login_mobile, #user_mobile, #userMobile, #bda_user_mobile").intlTelInput({
             separateDialCode: true,
             nationalMode: false,
+            onlyCountries: ["in"],
             initialCountry: country_key
         });
     });
