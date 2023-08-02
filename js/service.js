@@ -1290,7 +1290,7 @@ $('#add_adv_service').bootstrapValidator({
 
 
 
-    if ($('#add_service, #update_service, #add_provider, #add_adv_service, #update_adv_post').length > 0) {
+    if ($('#add_service, #update_service, #add_provider').length > 0) {
         document.addEventListener("DOMContentLoaded", init, false);
 
 
