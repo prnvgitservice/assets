@@ -12,7 +12,6 @@
     var cookies_content = $('#cookies_showhide').val();
     var cookies_text = $('#cookies_content_text').val();
 
-
     $(document).ready(function() {
         $('#flash_succ_message2').hide();
         $('#flash_error_message1').hide();
@@ -25,6 +24,31 @@
 
         $('.error_cancel').hide();
         $('.header-content-blk').hide();
+
+        $('.input-images-1').imageUploader({
+            maxSize: 1 * 1024 * 1024,
+            maxFiles: 5
+        });
+
+        if(current_page=='edit-adv-post'){
+            var currentImages=$('#currentImages').val().split(",");
+            
+            let preloaded = [];
+            for(var i=0;i<currentImages.length;i++){  
+                preloaded.push({id: i, src:base_url +currentImages[i]});
+        }
+
+        $('.input-images-2').imageUploader({
+            maxSize: 1 * 1024 * 1024,
+            preloaded: preloaded,
+            imagesInputName: 'images',
+            preloadedInputName: 'old',
+            maxFiles: 5
+        });
+    }
+
+      
+
         $('#contact_form').bootstrapValidator({
             fields: {
                 name: {
@@ -61,7 +85,9 @@
                 url: base_url + 'user/contact/insert_contact',
                 data: { name: name, email: email, csrf_token_name: csrf_token, message: message },
                 success: function(response) {
-                    if (response == 1) {
+                    
+                    var rr=response.replace("<div style='display:none;'>user/email/contact_form</div>",'');
+                    if (rr == 1) {
                         swal({
                             title: "Message Send !",
                             text: "Message Send Successfully....!",
