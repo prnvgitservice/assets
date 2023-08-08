@@ -25,11 +25,12 @@
         $('.error_cancel').hide();
         $('.header-content-blk').hide();
 
+        if(current_page=='add-adv-post'){
         $('.input-images-1').imageUploader({
             maxSize: 1 * 1024 * 1024,
             maxFiles: 5
         });
-
+      }
         if(current_page=='edit-adv-post'){
             var currentImages=$('#currentImages').val().split(",");
             
