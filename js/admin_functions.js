@@ -3638,4 +3638,13 @@ $('#add_pages').bootstrapValidator({
 		   }
    });
 
+   $(document).ready(function() {
+	$("#mobileno").intlTelInput({
+		separateDialCode: true,
+		nationalMode: false,
+		onlyCountries: ["in"],
+	});
+});
+
+
 })(jQuery);
