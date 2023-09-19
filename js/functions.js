@@ -383,7 +383,7 @@
             var password = $('#UserPassword').val();
             var categorys = $('#categorys').val();
             var subcategorys = $('#subcategorys').val();
-            var userName = $('#userName').val();
+            var userName = $('#name').val();
             var userEmail = $('#userEmail').val();
             var country_code = $("#userMobile").intlTelInput("getSelectedCountryData").dialCode;
             var is_agree = $('#agree_checkbox').val();
